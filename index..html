@@ -1,0 +1,173 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire Dashboard - GitHub Pages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginScreen" class="login-container">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-rocket"></i> Empire Dashboard
+        </h2>
+        <p class="text-center mb-4">Internet Business Control Center</p>
+        <form id="loginForm">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="fas fa-sign-in-alt"></i> Access Dashboard
+            </button>
+        </form>
+    </div>
+
+    <div id="mainDashboard" class="hidden">
+        <div class="container p-4">
+            <h2 class="text-center mb-4">
+                <i class="fas fa-chart-line"></i> Internet Business Empire
+            </h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="dashboard-card text-center">
+                        <h5>Total Revenue</h5>
+                        <div class="metric-value text-success">$47,892</div>
+                        <small>+23.5% this month</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card text-center">
+                        <h5>AI Tools</h5>
+                        <div class="metric-value text-primary">23</div>
+                        <small>All active</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card text-center">
+                        <h5>Products Made</h5>
+                        <div class="metric-value text-warning">1,247</div>
+                        <small>+156 today</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card text-center">
+                        <h5>Active Trades</h5>
+                        <div class="metric-value text-info">12</div>
+                        <small>+2.3% P&L</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-robot"></i> AI Factory</h6>
+                        <p>Images: 247 today</p>
+                        <p>Videos: 23 today</p>
+                        <p>Documents: 156 today</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-dollar-sign"></i> Revenue</h6>
+                        <p>Digital: $18,432</p>
+                        <p>Physical: $12,876</p>
+                        <p>Services: $8,234</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-chart-bar"></i> Trading</h6>
+                        <p>Today's P&L: +2.3%</p>
+                        <p>Active Signals: 4</p>
+                        <p>Bot Status: Active</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-outline-light" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const VALID_USERNAME = 'empire';
+        const VALID_PASSWORD = 'automate2025';
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('mainDashboard').classList.remove('hidden');
+            } else {
+                alert('Invalid credentials. Use: empire / automate2025');
+            }
+        });
+
+        function logout() {
+            document.getElementById('mainDashboard').classList.add('hidden');
+            document.getElementById('loginScreen').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html></pre>
+        </body>
+    </html>
