@@ -6,59 +6,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empire Dashboard - GitHub Pages</title>
+    <title>Empire Dashboard - 17-Layer Automation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-        }
-        
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .dashboard-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s;
-        }
-        
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        
-        .hidden {
-            display: none !important;
-        }
+        :root { --primary-color: #6f42c1; --secondary-color: #e83e8c; --success-color: #28a745; --warning-color: #ffc107; --danger-color: #dc3545; --info-color: #17a2b8; --dark-color: #1a1a2e; --darker-color: #16213e; --light-bg: #0f3460; --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%); --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        body { background: var(--dark-color); color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .sidebar { background: var(--darker-color); min-height: 100vh; border-right: 1px solid #333; }
+        .sidebar .nav-link { color: #b8b8b8b; border-radius: 8px; margin: 2px 0; transition: all .3s; }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active { background: var(--primary-color); color: #fff; transform: translateX(5px); }
+        .dashboard-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; margin-bottom: 20px; border: 1px solid rgba(255, 255, 255, 0.2); transition: transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0.3); }
+        .metric-card { padding: 25px; text-align: center; position: relative; overflow: hidden; }
+        .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-1); }
+        .metric-value { font-size: 2.8rem; font-weight: bold; margin: 15px 0; }
+        .status-indicator { width: 14px; height: 14px; border-radius: 50%; display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .status-online { background-color: var(--success-color); }
+        .status-warning { background-color: var(--warning-color); }
+        .status-offline { background-color: var(--danger-color); }
+        .login-container { max-width: 450px; margin: 120px auto; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
     <div id="loginScreen" class="login-container">
         <h2 class="text-center mb-4">
-            <i class="fas fa-rocket"></i> Empire Dashboard
+            <i class="fas fa-rocket"></i> Business Empire Control Center
         </h2>
-        <p class="text-center mb-4">Internet Business Control Center</p>
+        <p class="text-center mb-4">Automate Your Entire Business</p>
         <form id="loginForm">
             <div class="mb-3">
                 <input type="text" class="form-control" id="username" placeholder="Username" required>
@@ -75,36 +50,36 @@
     <div id="mainDashboard" class="hidden">
         <div class="container p-4">
             <h2 class="text-center mb-4">
-                <i class="fas fa-chart-line"></i> Internet Business Empire
+                <i class="fas fa-chart-line"></i> 17-Layer Automation Architecture
             </h2>
             
             <div class="row mb-4">
                 <div class="col-md-3">
                     <div class="dashboard-card text-center">
-                        <h5>Total Revenue</h5>
-                        <div class="metric-value text-success">$47,892</div>
-                        <small>+23.5% this month</small>
+                        <h5>Layer 1: Market Intelligence</h5>
+                        <div class="metric-value text-success">Google Trends, Semrush</div>
+                        <small>Automated market research & trend discovery</small>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="dashboard-card text-center">
-                        <h5>AI Tools</h5>
-                        <div class="metric-value text-primary">23</div>
-                        <small>All active</small>
+                        <h5>Layer 2: AI Content Factory</h5>
+                        <div class="metric-value text-primary">OpenAI GPT-4, Midjourney</div>
+                        <small>Automated content & product creation</small>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="dashboard-card text-center">
-                        <h5>Products Made</h5>
-                        <div class="metric-value text-warning">1,247</div>
-                        <small>+156 today</small>
+                        <h5>Layer 3: E-commerce Hub</h5>
+                        <div class="metric-value text-warning">Shopify, Amazon Seller Central</div>
+                        <small>Multi-platform automated selling</small>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="dashboard-card text-center">
-                        <h5>Active Trades</h5>
-                        <div class="metric-value text-info">12</div>
-                        <small>+2.3% P&L</small>
+                        <h5>Layer 4: Physical Fulfillment</h5>
+                        <div class="metric-value text-info">Printful, Amazon FBA</div>
+                        <small>Automated product manufacturing & delivery</small>
                     </div>
                 </div>
             </div>
@@ -112,31 +87,110 @@
             <div class="row mb-4">
                 <div class="col-md-4">
                     <div class="dashboard-card">
-                        <h6><i class="fas fa-robot"></i> AI Factory</h6>
-                        <p>Images: 247 today</p>
-                        <p>Videos: 23 today</p>
-                        <p>Documents: 156 today</p>
+                        <h6><i class="fas fa-robot"></i> Layer 5: Payment Processing</h6>
+                        <p>Stripe, PayPal, Wise</p>
+                        <p>Automated financial transactions</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="dashboard-card">
-                        <h6><i class="fas fa-dollar-sign"></i> Revenue</h6>
-                        <p>Digital: $18,432</p>
-                        <p>Physical: $12,876</p>
-                        <p>Services: $8,234</p>
+                        <h6><i class="fas fa-chart-bar"></i> Layer 6: Affiliate Marketing</h6>
+                        <p>Amazon Associates, ShareASale</p>
+                        <p>Automated affiliate promotions</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="dashboard-card">
-                        <h6><i class="fas fa-chart-bar"></i> Trading</h6>
-                        <p>Today's P&L: +2.3%</p>
-                        <p>Active Signals: 4</p>
-                        <p>Bot Status: Active</p>
+                        <h6><i class="fas fa-brain"></i> Layer 7: Trading Execution</h6>
+                        <p>TradingView, MetaTrader</p>
+                        <p>Automated financial trading</p>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-code"></i> Layer 8: Integration Orchestrator</h6>
+                        <p>n8n.io, Zapier</p>
+                        <p>Connects all layers together</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-bullhorn"></i> Layer 9: Marketing Automation</h6>
+                        <p>Mailchimp, ConvertKit</p>
+                        <p>Automated customer acquisition</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-envelope"></i> Layer 10: Customer Engagement</h6>
+                        <p>Intercom, ManyChat</p>
+                        <p>Automated customer communication</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-chart-line"></i> Layer 11: Content Distribution</h6>
+                        <p>YouTube, Medium</p>
+                        <p>Automated content publishing</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-eye"></i> Layer 12: Business Intelligence</h6>
+                        <p>Google Data Studio</p>
+                        <p>Automated analytics & reporting</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-server"></i> Layer 13: Cloud Infrastructure</h6>
+                        <p>AWS, Google Cloud</p>
+                        <p>Automated hosting & scalability</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-tasks"></i> Layer 14: Project Management</h6>
+                        <p>Trello, Asana</p>
+                        <p>Automated business operations</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-shield-alt"></i> Layer 15: Security & Compliance</h6>
+                        <p>Cloudflare, Wordfence</p>
+                        <p>Automated security & legal compliance</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-graduation-cap"></i> Layer 16: Education & Optimization</h6>
+                        <p>Coursera, Udemy</p>
+                        <p>Automated learning & system improvement</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <div class="dashboard-card">
+                        <h6><i class="fas fa-cog"></i> Layer 17: Unified Command Center</h6>
+                        <p>Custom React Dashboard</p>
+                        <p>Master dashboard & coordination</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
                 <button class="btn btn-outline-light" onclick="logout()">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </button>
